@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "schemalock"
+version = "0.1.0"
+description = "A git-trackable lockfile for DataFrame schemas — like poetry.lock, but for schemas."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+    { name = "schemalock" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.optional-dependencies]
+spark = ["pyspark>=3.0"]
+test = ["pytest", "pandas"]
+
+[project.urls]
+Homepage = "https://github.com/schemalock/schemalock"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/schemalock"]
